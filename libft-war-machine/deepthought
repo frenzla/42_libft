@@ -1,0 +1,98 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+Alexs-MacBook-Pro.local
+Darwin 23.2.0 arm64
+$> date
+Sat May  4 17:41:42 CEST 2024
+$> gcc --version
+Apple clang version 15.0.0 (clang-1500.1.0.2.5)
+Target: arm64-apple-darwin23.2.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple clang version 15.0.0 (clang-1500.1.0.2.5)
+Target: arm64-apple-darwin23.2.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= libft.h=======================================================================
+$> norminette libft.h | grep -E '(Error|Warning)'
+
+= Compiling libft ==============================================================
+$> make re
+/bin/rm -f ./ft_isalpha.o ./ft_isdigit.o ./ft_isalnum.o ./ft_isascii.o ./ft_isprint.o ./ft_strlen.o ./ft_memset.o ./ft_bzero.o ./ft_memcpy.o ./ft_memmove.o ./ft_strlcpy.o ./ft_strlcat.o ./ft_toupper.o ./ft_tolower.o ./ft_strchr.o ./ft_strrchr.o ./ft_strncmp.o ./ft_memchr.o ./ft_memcmp.o ./ft_strnstr.o ./ft_atoi.o ./ft_calloc.o ./ft_strdup.o ./ft_substr.o ./ft_strjoin.o ./ft_strtrim.o ./ft_split.o ./ft_itoa.o ./ft_strmapi.o ./ft_striteri.o ./ft_putchar_fd.o ./ft_putstr_fd.o ./ft_putendl_fd.o ./ft_putnbr_fd.o
+/bin/rm -f ./ft_lstnew.o ./ft_lstadd_front.o ./ft_lstsize.o ./ft_lstlast.o ./ft_lstadd_back.o ./ft_lstdelone.o ./ft_lstclear.o ./ft_lstiter.o ./ft_lstmap.o
+/bin/rm -f libft.a
+gcc -Wall -Wextra -Werror -I ./ -o ft_isalpha.o -c ft_isalpha.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_isdigit.o -c ft_isdigit.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_isalnum.o -c ft_isalnum.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_isascii.o -c ft_isascii.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_isprint.o -c ft_isprint.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_strlen.o -c ft_strlen.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_memset.o -c ft_memset.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_bzero.o -c ft_bzero.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_memcpy.o -c ft_memcpy.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_memmove.o -c ft_memmove.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_strlcpy.o -c ft_strlcpy.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_strlcat.o -c ft_strlcat.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_toupper.o -c ft_toupper.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_tolower.o -c ft_tolower.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_strchr.o -c ft_strchr.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_strrchr.o -c ft_strrchr.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_strncmp.o -c ft_strncmp.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_memchr.o -c ft_memchr.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_memcmp.o -c ft_memcmp.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_strnstr.o -c ft_strnstr.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_atoi.o -c ft_atoi.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_calloc.o -c ft_calloc.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_strdup.o -c ft_strdup.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_substr.o -c ft_substr.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_strjoin.o -c ft_strjoin.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_strtrim.o -c ft_strtrim.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_split.o -c ft_split.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_itoa.o -c ft_itoa.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_strmapi.o -c ft_strmapi.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_striteri.o -c ft_striteri.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_putchar_fd.o -c ft_putchar_fd.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_putstr_fd.o -c ft_putstr_fd.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_putendl_fd.o -c ft_putendl_fd.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_putnbr_fd.o -c ft_putnbr_fd.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_lstnew.o -c ft_lstnew.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_lstadd_front.o -c ft_lstadd_front.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_lstsize.o -c ft_lstsize.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_lstlast.o -c ft_lstlast.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_lstadd_back.o -c ft_lstadd_back.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_lstdelone.o -c ft_lstdelone.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_lstclear.o -c ft_lstclear.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_lstiter.o -c ft_lstiter.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_lstmap.o -c ft_lstmap.c
+ar rc libft.a ./ft_isalpha.o ./ft_isdigit.o ./ft_isalnum.o ./ft_isascii.o ./ft_isprint.o ./ft_strlen.o ./ft_memset.o ./ft_bzero.o ./ft_memcpy.o ./ft_memmove.o ./ft_strlcpy.o ./ft_strlcat.o ./ft_toupper.o ./ft_tolower.o ./ft_strchr.o ./ft_strrchr.o ./ft_strncmp.o ./ft_memchr.o ./ft_memcmp.o ./ft_strnstr.o ./ft_atoi.o ./ft_calloc.o ./ft_strdup.o ./ft_substr.o ./ft_strjoin.o ./ft_strtrim.o ./ft_split.o ./ft_itoa.o ./ft_strmapi.o ./ft_striteri.o ./ft_putchar_fd.o ./ft_putstr_fd.o ./ft_putendl_fd.o ./ft_putnbr_fd.o ./ft_lstnew.o ./ft_lstadd_front.o ./ft_lstsize.o ./ft_lstlast.o ./ft_lstadd_back.o ./ft_lstdelone.o ./ft_lstclear.o ./ft_lstiter.o ./ft_lstmap.o
+ranlib libft.a
+
+$> make bonus
+gcc -Wall -Wextra -Werror -I ./ -o ft_lstnew.o -c ft_lstnew.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_lstadd_front.o -c ft_lstadd_front.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_lstsize.o -c ft_lstsize.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_lstlast.o -c ft_lstlast.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_lstadd_back.o -c ft_lstadd_back.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_lstdelone.o -c ft_lstdelone.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_lstclear.o -c ft_lstclear.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_lstiter.o -c ft_lstiter.c
+gcc -Wall -Wextra -Werror -I ./ -o ft_lstmap.o -c ft_lstmap.c
+ar rc libft.a ./ft_lstnew.o ./ft_lstadd_front.o ./ft_lstsize.o ./ft_lstlast.o ./ft_lstadd_back.o ./ft_lstdelone.o ./ft_lstclear.o ./ft_lstiter.o ./ft_lstmap.o
+ranlib libft.a
+
+$> ls -la libft.a
+-rw-r--r--@ 1 alexlarose  staff  37192 May  4 17:41 /Users/alexlarose/Desktop/libft_project/libft-war-machine/dirlibft/libft.a
+
+= Bonus_functions ==============================================================
+
+= ft_lstmap_bonus.c ============================================================
+$> norminette ft_lstmap_bonus.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstmap.c main.c libft.a -o user_exe
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
