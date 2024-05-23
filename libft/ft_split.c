@@ -6,7 +6,7 @@
 /*   By: alarose <alarose@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:41:42 by alarose           #+#    #+#             */
-/*   Updated: 2024/05/04 15:00:54 by alarose          ###   ########.fr       */
+/*   Updated: 2024/05/23 19:19:48 by alarose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,16 @@ static int	get_len(char const *s, char c)
 	return (word_len);
 }
 
+static void	ft_free(char **lst, int len)
+{
+	int	i;
+
+	i = 0;
+	while (i < len)
+		free(lst[i++]);
+	free(lst);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**lst;
@@ -58,18 +68,33 @@ char	**ft_split(char const *s, char c)
 	lst = malloc((count_elem(s, c) + 1) * sizeof(char *));
 	if (!lst)
 		return (NULL);
-	i = 0;
+	i = -1;
 	while (*s)
 	{
-		while (*s == c && *s)
+		while (*s && *s == c)
 			s++;
 		if (*s)
 		{
 			word_len = get_len(s, c);
-			lst[i++] = ft_substr(s, 0, word_len);
+			lst[++i] = ft_substr(s, 0, word_len);
+			if (!(lst[i]))
+				return (ft_free(lst, i), NULL);
 			s += word_len;
 		}
 	}
-	lst[i] = NULL;
+	lst[++i] = NULL;
 	return (lst);
 }
+/*#include <stdio.h>
+int	main(void)
+{
+	char **lst;
+
+	lst = ft_split("hello", ' ');
+	while(*lst)
+	{
+		printf("%s\n", *lst);
+		lst++;
+	}
+	return(0);
+}*/
