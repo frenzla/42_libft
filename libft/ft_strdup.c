@@ -6,7 +6,7 @@
 /*   By: alarose <alarose@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:13:28 by alarose           #+#    #+#             */
-/*   Updated: 2024/05/02 12:04:08 by alarose          ###   ########.fr       */
+/*   Updated: 2024/05/15 14:48:56 by alarose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@ char	*ft_strdup(const char *s1)
 	if (!cpy)
 		return (NULL);
 	ft_strlcpy(cpy, s1, len + 1);
-	cpy[len + 1] = 0;
 	return (cpy);
 }

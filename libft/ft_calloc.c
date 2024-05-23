@@ -6,7 +6,7 @@
 /*   By: alarose <alarose@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 13:46:21 by alarose           #+#    #+#             */
-/*   Updated: 2024/05/02 11:42:15 by alarose          ###   ########.fr       */
+/*   Updated: 2024/05/15 16:15:39 by alarose          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*p;
+	size_t	tot_size;
 
-	if (count <= 0 || size <= 0)
-		return (malloc(0));
+	tot_size = count * size;
+	if (count != 0 && tot_size / count != size)
+		return (NULL);
 	p = malloc(count * size);
 	if (!p)
 		return (NULL);

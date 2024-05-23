@@ -6,7 +6,7 @@
 #    By: alarose <alarose@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/29 11:35:36 by alarose           #+#    #+#              #
-#    Updated: 2024/05/04 18:07:39 by alarose          ###   ########.fr        #
+#    Updated: 2024/05/15 16:49:11 by alarose          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,15 +49,15 @@ SRC = 	ft_isalpha.c	\
 		ft_putnbr_fd.c	\
 
 BONUSDIR = ./
-BONUS = ft_lstnew.c			\
-		ft_lstadd_front.c	\
-		ft_lstsize.c		\
-		ft_lstlast.c		\
-		ft_lstadd_back.c	\
-		ft_lstdelone.c		\
-		ft_lstclear.c		\
-		ft_lstiter.c		\
-		ft_lstmap.c			\
+BONUS = ft_lstnew_bonus.c			\
+		ft_lstadd_front_bonus.c	\
+		ft_lstsize_bonus.c		\
+		ft_lstlast_bonus.c		\
+		ft_lstadd_back_bonus.c	\
+		ft_lstdelone_bonus.c		\
+		ft_lstclear_bonus.c		\
+		ft_lstiter_bonus.c		\
+		ft_lstmap_bonus.c			\
 
 SRCS = $(addprefix $(SRCDIR), $(SRC))
 BONUS_FILES = $(addprefix $(BONUSDIR), $(BONUS))
@@ -70,7 +70,9 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar rc
 LIB = ranlib
 
-all :  bonus clean
+all : $(OBJ) ${OBJ_BONUS}
+	$(AR) ${NAME} ${OBJ} ${OBJ_BONUS}
+	$(LIB) ${NAME}
 
 %.o : %.c
 	$(CC) $(CFLAGS) $(HEADERS) -o $@ -c $<
@@ -92,4 +94,8 @@ bonus : $(OBJ) ${OBJ_BONUS}
 	$(AR) ${NAME} ${OBJ} ${OBJ_BONUS}
 	$(LIB) ${NAME}
 
-.PHONY all clean fclean re bonus
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS_FILES)
+	gcc -nostartfiles -shared -o libft.so $(OBJ) ${OBJ_BONUS}
+
+.PHONY: all clean fclean re bonus
